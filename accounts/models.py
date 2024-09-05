@@ -9,5 +9,12 @@ class CustomUser(AbstractUser):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    ROLE_CHOICES = [
+        ('admin', 'Admin'),
+        ('volunteer', 'Volunteer'),
+        ('adopter', 'Adopter'),
+    ]
+    role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='adopter')
+
     def __str__(self):
         return self.email

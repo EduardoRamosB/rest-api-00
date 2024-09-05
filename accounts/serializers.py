@@ -7,7 +7,7 @@ from .models import CustomUser
 class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ('id', 'username', 'email')
+        fields = ('id', 'username', 'email', 'role')
 
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
@@ -15,7 +15,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = CustomUser
-        fields = ('id', 'username', 'email', 'password', 'password_confirmation')
+        fields = ('id', 'username', 'email', 'role', 'password', 'password_confirmation')
         extra_kwargs = {'password': {'write_only': True}}
 
     def validate(self, attrs):
@@ -31,8 +31,8 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         validated_data.pop('password_confirmation', None)
-
-        return CustomUser.objects.create_user(**validated_data)
+        user = CustomUser.objects.create_user(**validated_data)
+        return user
 
 
 class UserLoginSerializer(serializers.Serializer):

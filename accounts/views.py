@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from rest_framework import status
 from rest_framework.generics import GenericAPIView
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -34,7 +33,7 @@ class UserLoginAPIView(GenericAPIView):
         serializer = CustomUserSerializer(user)
         token = RefreshToken.for_user(user)
         data = serializer.data
-        data['tokens'] = {"refresh": str(token), "access": str(token)}
+        data['tokens'] = {"refresh": str(token), "access": str(token.access_token)}
 
         return Response(data, status=status.HTTP_200_OK)
 

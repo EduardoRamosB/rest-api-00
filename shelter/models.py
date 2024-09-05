@@ -19,12 +19,20 @@ class Animal(models.Model):
         ('returned', 'Returned'),  # Regresado al albergue después de una adopción, se viene aqui de 'adopted', el admin lo puede pasar a 'waiting'
     ]
 
-    name = models.CharField(max_length=100)
-    age = models.PositiveSmallIntegerField()
-    breed = models.CharField(max_length=100)
-    kind = models.CharField(max_length=20, choices=TYPE_CHOICES)
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES)
+    name = models.CharField(max_length=100, db_index=True)
+    age = models.PositiveSmallIntegerField(db_index=True)
+    breed = models.CharField(max_length=100, db_index=True)
+    kind = models.CharField(max_length=20, choices=TYPE_CHOICES, db_index=True)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, db_index=True)
     reason = models.TextField(blank=True, null=True)
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.PROTECT,
+        limit_choices_to={'role': 'admin'}, related_name='animals_created'
+    )
+    updated_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.PROTECT,
+        limit_choices_to={'role': 'admin'}, related_name='animals_updated'
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -41,7 +49,7 @@ class Adoption(models.Model):
         ('cancelled', 'Cancelled'),
     ]
 
-    date = models.DateTimeField(auto_now_add=True)
+    date = models.DateTimeField(auto_now_add=True, db_index=True)
     animal = models.ForeignKey(Animal, on_delete=models.CASCADE)
     volunteer = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, limit_choices_to={'role': 'volunteer'},
@@ -52,6 +60,14 @@ class Adoption(models.Model):
         related_name='adoptions_adopter'
     )
     status = models.CharField(max_length=20, choices=STATUS_CHOICES)
+    created_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.PROTECT,
+        limit_choices_to={'role': 'admin'}, related_name='adoptions_created'
+    )
+    updated_by = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.PROTECT,
+        limit_choices_to={'role': 'admin'}, related_name='adoptions_updated'
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

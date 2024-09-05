@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49ade02e-25da-48b7-9e5f-baa9b85e39c3" name="Changes" comment="Add role to CustomUser">
+    <list default="true" id="49ade02e-25da-48b7-9e5f-baa9b85e39c3" name="Changes" comment="Add shelter app">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelter/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shelter/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1725485706099</updated>
       <workItem from="1725485707436" duration="18232000" />
-      <workItem from="1725554146769" duration="5432000" />
+      <workItem from="1725554146769" duration="9175000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -204,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725570484855</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Add shelter app">
+      <option name="closed" value="true" />
+      <created>1725571810164</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1725571810164</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +234,7 @@
     <MESSAGE value="Fix token.access_token" />
     <MESSAGE value="Min fixes" />
     <MESSAGE value="Add role to CustomUser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add role to CustomUser" />
+    <MESSAGE value="Add shelter app" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add shelter app" />
   </component>
 </project>

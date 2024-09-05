@@ -10,6 +10,6 @@ class AnimalViewSet(viewsets.ModelViewSet):
     serializer_class = AnimalSerializer
 
 
-class AdopterViewSet(viewsets.ModelViewSet):
+class AdoptionViewSet(viewsets.ModelViewSet):
     queryset = Adoption.objects.all()
     serializer_class = AdoptionSerializer

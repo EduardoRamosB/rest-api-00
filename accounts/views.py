@@ -18,7 +18,7 @@ class UserRegistrationAPIView(GenericAPIView):
         user = serializer.save()
         token = RefreshToken.for_user(user)
         data = serializer.data
-        data['tokens'] = {"refresh": str(token), "access": str(token)}
+        data['tokens'] = {"refresh": str(token), "access": str(token.access_token)}
 
         return Response(data, status=status.HTTP_201_CREATED)
 

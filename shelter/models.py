@@ -1,5 +1,7 @@
 from django.conf import settings
 from django.db import models
+from simple_history.models import HistoricalRecords
+
 
 class Animal(models.Model):
     TYPE_CHOICES = [
@@ -23,6 +25,10 @@ class Animal(models.Model):
     kind = models.CharField(max_length=20, choices=TYPE_CHOICES)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES)
     reason = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    history = HistoricalRecords()
 
     def __str__(self):
         return self.name
@@ -46,6 +52,10 @@ class Adoption(models.Model):
         related_name='adoptions_adopter'
     )
     status = models.CharField(max_length=20, choices=STATUS_CHOICES)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    history = HistoricalRecords()
 
     def __str__(self):
         return (f'Adoption of {self.animal.name} by {self.adopter.first_name} {self.adopter.last_name} '

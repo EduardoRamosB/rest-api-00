@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49ade02e-25da-48b7-9e5f-baa9b85e39c3" name="Changes" comment="Password is required False">
+    <list default="true" id="49ade02e-25da-48b7-9e5f-baa9b85e39c3" name="Changes" comment="Refactor to Users CRUD">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelter/serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/shelter/serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelter/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shelter/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +93,7 @@
       <updated>1725485706099</updated>
       <workItem from="1725485707436" duration="18232000" />
       <workItem from="1725554146769" duration="28128000" />
-      <workItem from="1725634945136" duration="7083000" />
+      <workItem from="1725634945136" duration="9057000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -319,14 +319,21 @@
       <option name="project" value="LOCAL" />
       <updated>1725638633461</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Refactor to Users CRUD">
+      <option name="closed" value="true" />
+      <created>1725643241789</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1725643241789</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Init commit" />
     <MESSAGE value="Add accounts app" />
     <MESSAGE value="Add CustomUser model" />
     <MESSAGE value="Add created_at and updated_at" />
@@ -351,6 +358,7 @@
     <MESSAGE value="Add Animals create, read  and update" />
     <MESSAGE value="Fix normal sign up save password" />
     <MESSAGE value="Password is required False" />
-    <option name="LAST_COMMIT_MESSAGE" value="Password is required False" />
+    <MESSAGE value="Refactor to Users CRUD" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor to Users CRUD" />
   </component>
 </project>

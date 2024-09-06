@@ -44,6 +44,7 @@ class Animal(models.Model):
 
 class Adoption(models.Model):
     STATUS_CHOICES = [
+        ('requested', 'Requested'),
         ('in_progress', 'In Progress'),
         ('completed', 'Completed'),
         ('cancelled', 'Cancelled'),

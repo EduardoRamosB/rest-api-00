@@ -10,16 +10,22 @@ from .serializers import UserRegistrationSerializer, UserLoginSerializer, Custom
 
 class VolunteerListCreateAPIView(ListCreateAPIView):
     permission_classes = (IsAuthenticated,)
-    serializer_class = CustomUserSerializer
+    serializer_class = UserRegistrationSerializer
 
     def get_queryset(self):
+        print('VolunteerListCreateAPIView.get_queryset')
         return CustomUser.objects.filter(role='volunteer')
 
     def post(self, request, *args, **kwargs):
+        print('VolunteerListCreateAPIView.post request.data:', request.data)
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
+
         user = serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        print('VolunteerListCreateAPIView.post user:', user)
+        data = serializer.data
+        print('VolunteerListCreateAPIView.post data:', data)
+        return Response(data, status=status.HTTP_201_CREATED)
 
 
 class VolunteerRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
@@ -27,6 +33,7 @@ class VolunteerRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
     serializer_class = CustomUserSerializer
 
     def get_queryset(self):
+        print('VolunteerRetrieveUpdateDestroyAPIView.get_queryset')
         return CustomUser.objects.filter(role='volunteer')
 
 
@@ -35,11 +42,18 @@ class UserRegistrationAPIView(GenericAPIView):
     serializer_class = UserRegistrationSerializer
 
     def post(self, request, *args, **kwargs):
+        print('UserRegistrationAPIView.post request.data:', request.data)
+
         serializer = self.get_serializer(data=request.data)
+        print('UserRegistrationAPIView.post serializer:', serializer)
         serializer.is_valid(raise_exception=True)
+
         user = serializer.save()
+        print('UserRegistrationAPIView.post user:', user)
         token = RefreshToken.for_user(user)
+        print('UserRegistrationAPIView.post token:', token)
         data = serializer.data
+        print('UserRegistrationAPIView.post data:', data)
         data['tokens'] = {"refresh": str(token), "access": str(token.access_token)}
 
         return Response(data, status=status.HTTP_201_CREATED)

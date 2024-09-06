@@ -1,25 +1,22 @@
 from django.contrib.auth import authenticate
 from rest_framework import serializers
-
 from .models import CustomUser
-
 
 class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = CustomUser
-        fields = ('id', 'username', 'email', 'role')
-
+        fields = ('id', 'username', 'email', 'role', 'first_name', 'last_name')
 
 class UserRegistrationSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True)
     password_confirmation = serializers.CharField(write_only=True)
 
     class Meta:
         model = CustomUser
-        fields = ('id', 'username', 'email', 'role', 'password', 'password_confirmation')
+        fields = ('id', 'username', 'email', 'role', 'first_name', 'last_name', 'password', 'password_confirmation')
         extra_kwargs = {'password': {'write_only': True}}
 
     def validate(self, attrs):
-        print(attrs)
         if attrs['password'] != attrs['password_confirmation']:
             raise serializers.ValidationError('Passwords do not match')
 
@@ -33,7 +30,6 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         validated_data.pop('password_confirmation', None)
         user = CustomUser.objects.create_user(**validated_data)
         return user
-
 
 class UserLoginSerializer(serializers.Serializer):
     email = serializers.EmailField()

@@ -1,10 +1,33 @@
 from rest_framework import status
-from rest_framework.generics import GenericAPIView, RetrieveAPIView
+from rest_framework.generics import GenericAPIView, RetrieveAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 
+from .models import CustomUser
 from .serializers import UserRegistrationSerializer, UserLoginSerializer, CustomUserSerializer
+
+
+class VolunteerListCreateAPIView(ListCreateAPIView):
+    permission_classes = (IsAuthenticated,)
+    serializer_class = CustomUserSerializer
+
+    def get_queryset(self):
+        return CustomUser.objects.filter(role='volunteer')
+
+    def post(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        user = serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+
+class VolunteerRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    permission_classes = (IsAuthenticated,)
+    serializer_class = CustomUserSerializer
+
+    def get_queryset(self):
+        return CustomUser.objects.filter(role='volunteer')
 
 
 class UserRegistrationAPIView(GenericAPIView):

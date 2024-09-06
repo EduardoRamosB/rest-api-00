@@ -14,7 +14,7 @@ class CustomUser(AbstractUser):
         ('volunteer', 'Volunteer'),
         ('adopter', 'Adopter'),
     ]
-    role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='adopter')
+    role = models.CharField(max_length=10, choices=ROLE_CHOICES, default='admin')
 
     def __str__(self):
         return self.email

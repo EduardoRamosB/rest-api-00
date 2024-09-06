@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49ade02e-25da-48b7-9e5f-baa9b85e39c3" name="Changes" comment="Fix Urls">
+    <list default="true" id="49ade02e-25da-48b7-9e5f-baa9b85e39c3" name="Changes" comment="Add migrations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelter/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/shelter/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +93,7 @@
       <option name="presentableId" value="Default" />
       <updated>1725485706099</updated>
       <workItem from="1725485707436" duration="18232000" />
-      <workItem from="1725554146769" duration="13083000" />
+      <workItem from="1725554146769" duration="15175000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -253,7 +255,23 @@
       <option name="project" value="LOCAL" />
       <updated>1725578205533</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Add indexes">
+      <option name="closed" value="true" />
+      <created>1725579500411</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1725579500411</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Add migrations">
+      <option name="closed" value="true" />
+      <created>1725579879192</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1725579879192</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,6 +297,8 @@
     <MESSAGE value="Add serializers" />
     <MESSAGE value="Add views and urls" />
     <MESSAGE value="Fix Urls" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix Urls" />
+    <MESSAGE value="Add indexes" />
+    <MESSAGE value="Add migrations" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add migrations" />
   </component>
 </project>

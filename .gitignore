@@ -162,4 +162,6 @@ dmypy.json
 cython_debug/
 
 # PyCharm
-idea/
+.idea
+
+.env.local

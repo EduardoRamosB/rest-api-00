@@ -15,9 +15,8 @@ urlpatterns = [
     path('volunteers/<int:pk>/', VolunteerRetrieveUpdateDestroyAPIView.as_view(), name='volunteer-retrieve-update-destroy'),
     path('adopters/', AdopterListCreateAPIView.as_view(), name='adopter-list-create'),
     path('adopters/<int:pk>/', AdopterRetrieveUpdateDestroyAPIView.as_view(), name='adopter-retrieve-update-destroy'),
-# Ruta genérica para crear/listar usuarios con rol
+    # Ruta genérica para crear/listar usuarios con rol
     path('users/<str:role>/', UserRoleListCreateAPIView.as_view(), name='user-role-list-create'),
-
     # Ruta genérica para recuperar/actualizar/eliminar usuarios con rol
     path('users/<str:role>/<int:pk>/', UserRoleRetrieveUpdateDestroyAPIView.as_view(), name='user-role-retrieve-update-destroy'),
 ]

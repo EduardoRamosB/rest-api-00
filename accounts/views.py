@@ -42,66 +42,6 @@ class UserRoleRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
         return CustomUser.objects.none()
 
 
-
-
-class AdopterListCreateAPIView(ListCreateAPIView):
-    permission_classes = (IsAuthenticated,)
-    serializer_class = UserRegistrationSerializer
-
-    def get_queryset(self):
-        print('AdopterListCreateAPIView.get_queryset')
-        return CustomUser.objects.filter(role='adopter')
-
-    def post(self, request, *args, **kwargs):
-        print('AdopterListCreateAPIView.post request.data:', request.data)
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-
-        user = serializer.save()
-        print('AdopterListCreateAPIView.post user:', user)
-        data = serializer.data
-        print('AdopterListCreateAPIView.post data:', data)
-        return Response(data, status=status.HTTP_201_CREATED)
-
-
-class AdopterRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-    permission_classes = (IsAuthenticated,)
-    serializer_class = CustomUserSerializer
-
-    def get_queryset(self):
-        print('AdopterRetrieveUpdateDestroyAPIView.get_queryset')
-        return CustomUser.objects.filter(role='adopter')
-
-
-class VolunteerListCreateAPIView(ListCreateAPIView):
-    permission_classes = (IsAuthenticated,)
-    serializer_class = UserRegistrationSerializer
-
-    def get_queryset(self):
-        print('VolunteerListCreateAPIView.get_queryset')
-        return CustomUser.objects.filter(role='volunteer')
-
-    def post(self, request, *args, **kwargs):
-        print('VolunteerListCreateAPIView.post request.data:', request.data)
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-
-        user = serializer.save()
-        print('VolunteerListCreateAPIView.post user:', user)
-        data = serializer.data
-        print('VolunteerListCreateAPIView.post data:', data)
-        return Response(data, status=status.HTTP_201_CREATED)
-
-
-class VolunteerRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
-    permission_classes = (IsAuthenticated,)
-    serializer_class = CustomUserSerializer
-
-    def get_queryset(self):
-        print('VolunteerRetrieveUpdateDestroyAPIView.get_queryset')
-        return CustomUser.objects.filter(role='volunteer')
-
-
 class UserRegistrationAPIView(GenericAPIView):
     permission_classes = (AllowAny,)
     serializer_class = UserRegistrationSerializer
@@ -160,3 +100,63 @@ class UserInfoAPIView(RetrieveAPIView):
 
     def get_object(self):
         return self.request.user
+
+
+# Probar estas clases, si ya no estan en uso borrarlas, se hicieron con un approach diferente ya no en uso :)
+# No se estan cubriendo en test ni en coverage
+class AdopterListCreateAPIView(ListCreateAPIView):
+    permission_classes = (IsAuthenticated,)
+    serializer_class = UserRegistrationSerializer
+
+    def get_queryset(self):
+        print('AdopterListCreateAPIView.get_queryset')
+        return CustomUser.objects.filter(role='adopter')
+
+    def post(self, request, *args, **kwargs):
+        print('AdopterListCreateAPIView.post request.data:', request.data)
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        user = serializer.save()
+        print('AdopterListCreateAPIView.post user:', user)
+        data = serializer.data
+        print('AdopterListCreateAPIView.post data:', data)
+        return Response(data, status=status.HTTP_201_CREATED)
+
+
+class AdopterRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    permission_classes = (IsAuthenticated,)
+    serializer_class = CustomUserSerializer
+
+    def get_queryset(self):
+        print('AdopterRetrieveUpdateDestroyAPIView.get_queryset')
+        return CustomUser.objects.filter(role='adopter')
+
+
+class VolunteerListCreateAPIView(ListCreateAPIView):
+    permission_classes = (IsAuthenticated,)
+    serializer_class = UserRegistrationSerializer
+
+    def get_queryset(self):
+        print('VolunteerListCreateAPIView.get_queryset')
+        return CustomUser.objects.filter(role='volunteer')
+
+    def post(self, request, *args, **kwargs):
+        print('VolunteerListCreateAPIView.post request.data:', request.data)
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        user = serializer.save()
+        print('VolunteerListCreateAPIView.post user:', user)
+        data = serializer.data
+        print('VolunteerListCreateAPIView.post data:', data)
+        return Response(data, status=status.HTTP_201_CREATED)
+
+
+class VolunteerRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    permission_classes = (IsAuthenticated,)
+    serializer_class = CustomUserSerializer
+
+    def get_queryset(self):
+        print('VolunteerRetrieveUpdateDestroyAPIView.get_queryset')
+        return CustomUser.objects.filter(role='volunteer')

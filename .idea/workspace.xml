@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49ade02e-25da-48b7-9e5f-baa9b85e39c3" name="Changes" comment="Add kpis app">
-      <change afterPath="$PROJECT_DIR$/kpis/urls.py" afterDir="false" />
+    <list default="true" id="49ade02e-25da-48b7-9e5f-baa9b85e39c3" name="Changes" comment="Add 4 kpis">
+      <change afterPath="$PROJECT_DIR$/accounts/tests/test_models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend02/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend02/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kpis/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/kpis/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,23 +26,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Django Server.backend02.executor&quot;: &quot;Run&quot;,
-    &quot;Notification.DisplayName-DoNotAsk-Database detector&quot;: &quot;Database detector&quot;,
-    &quot;Notification.DoNotAsk-Database detector&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/DEV/PY/backend02&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Django Server.backend02.executor": "Run",
+    "Notification.DisplayName-DoNotAsk-Database detector": "Database detector",
+    "Notification.DoNotAsk-Database detector": "true",
+    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "test",
+    "last_opened_file_path": "F:/DEV/PY/backend02",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\DEV\PY\backend02" />
@@ -95,7 +94,7 @@
       <workItem from="1725485707436" duration="18232000" />
       <workItem from="1725554146769" duration="28128000" />
       <workItem from="1725634945136" duration="27417000" />
-      <workItem from="1725680175835" duration="6123000" />
+      <workItem from="1725680175835" duration="7070000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -369,14 +368,21 @@
       <option name="project" value="LOCAL" />
       <updated>1725685016188</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Add 4 kpis">
+      <option name="closed" value="true" />
+      <created>1725690018264</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1725690018264</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add CustomUser to admin.py" />
     <MESSAGE value="Setup DRF" />
     <MESSAGE value="Setup SimpleJwt and blacklist migrate" />
     <MESSAGE value="Add serializers.py" />
@@ -401,7 +407,8 @@
     <MESSAGE value="Update Serializers" />
     <MESSAGE value="Sort by created_at desc" />
     <MESSAGE value="Add kpis app" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add kpis app" />
+    <MESSAGE value="Add 4 kpis" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add 4 kpis" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

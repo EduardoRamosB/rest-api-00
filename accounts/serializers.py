@@ -3,10 +3,17 @@ from rest_framework import serializers
 from .models import CustomUser
 
 class CustomUserSerializer(serializers.ModelSerializer):
+    full_name = serializers.SerializerMethodField()
+
     class Meta:
         model = CustomUser
-        fields = ('id', 'username', 'email', 'role', 'first_name', 'last_name', 'password', 'created_at', 'updated_at')
+        fields = ('id', 'username', 'email', 'role', 'first_name', 'last_name', 'full_name', 'password', 'created_at', 'updated_at')
         extra_kwargs = {'password': {'write_only': True, 'required': False}}
+
+    def get_full_name(self, obj):
+        if obj.first_name and obj.last_name:
+            return f"{obj.first_name} {obj.last_name}"
+        return obj.username
 
     def update(self, instance, validated_data):
         password = validated_data.pop('password', None)

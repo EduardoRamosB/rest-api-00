@@ -12,7 +12,8 @@ class Animal(models.Model):
     STATUS_CHOICES = [
         ('waiting', 'Waiting'),  # En espera de adopción por diversas razones, primer status
         ('available', 'Available'),  # Disponible para adopción, se viene aqui de 'waiting'
-        ('pending', 'Pending'),  # Proceso de adopción en curso, se viene aqui de 'available'
+        ('requested', 'Requested'),  # Solicitado para una adopción, viene de 'available'
+        ('pending', 'Pending'),  # Proceso de adopción en curso, se viene aqui de 'requested'
         ('adopted', 'Adopted'),  # Adoptado exitosamente, se viene aqui de 'pending'
         ('euthanized', 'Euthanized'),  # Eutanasiado por razones médicas, se viene aqui de 'waiting'
         ('aggressive', 'Aggressive'),  # Comportamiento agresivo, no apto para adopción, se viene aqui de 'waiting'
@@ -54,7 +55,7 @@ class Adoption(models.Model):
     animal = models.ForeignKey(Animal, on_delete=models.CASCADE)
     volunteer = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, limit_choices_to={'role': 'volunteer'},
-        related_name='adoptions_volunteer'
+        related_name='adoptions_volunteer', null=True, blank=True
     )
     adopter = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, limit_choices_to={'role': 'adopter'},
@@ -76,4 +77,4 @@ class Adoption(models.Model):
 
     def __str__(self):
         return (f'Adoption of {self.animal.name} by {self.adopter.first_name} {self.adopter.last_name} '
-                f'and registered by {self.volunteer.first_name} {self.volunteer.last_name}')
+                f'and registered by {self.volunteer.first_name if self.volunteer else "No Volunteer"}')

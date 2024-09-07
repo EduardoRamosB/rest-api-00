@@ -117,6 +117,3 @@ class AdoptionViewSet(viewsets.ModelViewSet):
                 pass
 
             animal.save()
-
-
-

@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49ade02e-25da-48b7-9e5f-baa9b85e39c3" name="Changes" comment="Update Serializers">
+    <list default="true" id="49ade02e-25da-48b7-9e5f-baa9b85e39c3" name="Changes" comment="Sort by created_at desc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shelter/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shelter/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +92,7 @@
       <workItem from="1725485707436" duration="18232000" />
       <workItem from="1725554146769" duration="28128000" />
       <workItem from="1725634945136" duration="27417000" />
-      <workItem from="1725680175835" duration="2183000" />
+      <workItem from="1725680175835" duration="3453000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -344,14 +342,21 @@
       <option name="project" value="LOCAL" />
       <updated>1725670066666</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Sort by created_at desc">
+      <option name="closed" value="true" />
+      <created>1725682428631</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1725682428631</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add created_at and updated_at" />
     <MESSAGE value="Add forms" />
     <MESSAGE value="Add CustomUser to admin.py" />
     <MESSAGE value="Setup DRF" />
@@ -376,7 +381,8 @@
     <MESSAGE value="Refactor to Users CRUD" />
     <MESSAGE value="Add new state to ADoption called requested" />
     <MESSAGE value="Update Serializers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update Serializers" />
+    <MESSAGE value="Sort by created_at desc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sort by created_at desc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

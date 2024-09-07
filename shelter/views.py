@@ -7,6 +7,11 @@ from accounts.models import CustomUser
 from shelter.models import Animal, Adoption
 from shelter.serializers import AnimalSerializer, AdoptionCreateSerializer, AdoptionDetailSerializer
 
+CREATED_BY_ID_ERROR = "Created By ID is required."
+UPDATED_BY_ID_ERROR = "Updated By ID is required."
+ANIMAL_ID_ERROR = "Animal ID is required."
+INVALID_STATUS_ERROR = "Invalid status value"
+
 class AnimalViewSet(viewsets.ModelViewSet):
     queryset = Animal.objects.all()
     serializer_class = AnimalSerializer
@@ -26,9 +31,9 @@ class AnimalViewSet(viewsets.ModelViewSet):
         updated_by_id = self.request.data.get('updated_by_id')
 
         if not created_by_id:
-            raise ValidationError("Created By ID is required.")
+            raise ValidationError(CREATED_BY_ID_ERROR)
         if not updated_by_id:
-            raise ValidationError("Updated By ID is required.")
+            raise ValidationError(UPDATED_BY_ID_ERROR)
 
         created_by = get_object_or_404(CustomUser, id=created_by_id)
         updated_by = get_object_or_404(CustomUser, id=updated_by_id)
@@ -64,18 +69,17 @@ class AdoptionViewSet(viewsets.ModelViewSet):
                 return Adoption.objects.none()
         return Adoption.objects.all().order_by('-created_at')
 
-
     def perform_create(self, serializer):
         created_by_id = self.request.data.get('created_by_id')
         updated_by_id = self.request.data.get('updated_by_id')
         animal_id = self.request.data.get('animal')
 
         if not created_by_id:
-            raise ValidationError("Created By ID is required.")
+            raise ValidationError(CREATED_BY_ID_ERROR)
         if not updated_by_id:
-            raise ValidationError("Updated By ID is required.")
+            raise ValidationError(UPDATED_BY_ID_ERROR)
         if not animal_id:
-            raise ValidationError("Animal ID is required.")
+            raise ValidationError(ANIMAL_ID_ERROR)
 
         created_by = get_object_or_404(CustomUser, id=created_by_id)
         updated_by = get_object_or_404(CustomUser, id=updated_by_id)
@@ -93,14 +97,14 @@ class AdoptionViewSet(viewsets.ModelViewSet):
     def perform_update(self, serializer):
         updated_by_id = self.request.data.get('updated_by_id')
         if not updated_by_id:
-            raise ValidationError("Updated By ID is required.")
+            raise ValidationError(UPDATED_BY_ID_ERROR)
 
         updated_by = get_object_or_404(CustomUser, id=updated_by_id)
         status = self.request.data.get('status')
 
         if status:
             if status not in dict(Adoption.STATUS_CHOICES).keys():
-                raise ValidationError("Invalid status value")
+                raise ValidationError(INVALID_STATUS_ERROR)
 
             # Save the adoption with the updated status
             serializer.save(updated_by=updated_by)

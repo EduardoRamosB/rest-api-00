@@ -7,7 +7,7 @@ from shelter.models import Animal, Adoption
 class AnimalSerializerTests(APITestCase):
 
     def setUp(self):
-        # Crea usuarios y un animal usando fábricas
+        # Crea usuarios y un animal usando factories
         self.created_by = UserFactory()
         self.updated_by = UserFactory()
         self.animal = AnimalFactory(created_by=self.created_by, updated_by=self.updated_by)
@@ -25,7 +25,7 @@ class AnimalSerializerTests(APITestCase):
         self.assertEqual(data['updated_by'], f"{self.updated_by.first_name} {self.updated_by.last_name}")
 
     def test_animal_serializer_update(self):
-        # Verifica que el método update del AnimalSerializer funciona correctamente
+        # Verifica que el metodo update del AnimalSerializer funciona correctamente
         serializer = AnimalSerializer(instance=self.animal, data={'name': 'Updated Name'}, partial=True)
         serializer.is_valid(raise_exception=True)
         updated_animal = serializer.save()
@@ -34,7 +34,7 @@ class AnimalSerializerTests(APITestCase):
 class CustomUserSerializerTests(APITestCase):
 
     def setUp(self):
-        # Crea un usuario usando una fábrica
+        # Crea un usuario usando una factories
         self.user = UserFactory()
 
     def test_custom_user_serializer(self):
@@ -46,7 +46,7 @@ class CustomUserSerializerTests(APITestCase):
 class AdoptionSerializerTests(APITestCase):
 
     def setUp(self):
-        # Crea usuarios, un animal y una adopción usando fábricas
+        # Crea usuarios, un animal y una adopción usando factories
         self.adopter = UserFactory(role='adopter')
         self.volunteer = UserFactory(role='volunteer')
         self.admin = UserFactory(role='admin')

@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="49ade02e-25da-48b7-9e5f-baa9b85e39c3" name="Changes" comment="Add accounts test for views and serializers">
-      <change afterPath="$PROJECT_DIR$/shelter/factories.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shelter/tests/test_models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shelter/tests/test_serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shelter/tests/test_views.py" afterDir="false" />
+    <list default="true" id="49ade02e-25da-48b7-9e5f-baa9b85e39c3" name="Changes" comment="Add shelter test for views and serializers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelter/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelter/migrations/0002_alter_adoption_status_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelter/migrations/0003_alter_adoption_volunteer.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shelter/migrations/0004_alter_animal_status_alter_historicalanimal_status.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,23 +29,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Django Server.backend02.executor": "Run",
-    "Notification.DisplayName-DoNotAsk-Database detector": "Database detector",
-    "Notification.DoNotAsk-Database detector": "true",
-    "RunOnceActivity.OpenDjangoStructureViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "test",
-    "last_opened_file_path": "F:/DEV/PY/backend02",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Django Server.backend02.executor&quot;: &quot;Run&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Database detector&quot;: &quot;Database detector&quot;,
+    &quot;Notification.DoNotAsk-Database detector&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenDjangoStructureViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;test&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/DEV/PY/backend02&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\DEV\PY\backend02" />
@@ -96,7 +97,8 @@
       <workItem from="1725485707436" duration="18232000" />
       <workItem from="1725554146769" duration="28128000" />
       <workItem from="1725634945136" duration="27417000" />
-      <workItem from="1725680175835" duration="14160000" />
+      <workItem from="1725680175835" duration="15030000" />
+      <workItem from="1725733439128" duration="1634000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <option name="closed" value="true" />
@@ -402,14 +404,29 @@
       <option name="project" value="LOCAL" />
       <updated>1725693919007</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Add shelter test for views and serializers">
+      <option name="closed" value="true" />
+      <created>1725698126546</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1725698126547</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Add shelter test for views and serializers">
+      <option name="closed" value="true" />
+      <created>1725698196943</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1725698196943</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add serializers.py" />
     <MESSAGE value="Setup Cors" />
     <MESSAGE value="Fix token.access_token" />
     <MESSAGE value="Min fixes" />
@@ -434,6 +451,7 @@
     <MESSAGE value="Add 4 kpis" />
     <MESSAGE value="Add accounts test for models" />
     <MESSAGE value="Add accounts test for views and serializers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add accounts test for views and serializers" />
+    <MESSAGE value="Add shelter test for views and serializers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add shelter test for views and serializers" />
   </component>
 </project>

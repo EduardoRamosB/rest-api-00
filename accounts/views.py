@@ -15,7 +15,7 @@ class UserRoleListCreateAPIView(ListCreateAPIView):
         role = self.kwargs.get('role', None)
         print(f'UserRoleListCreateAPIView.get_queryset role={role}')
         if role:
-            return CustomUser.objects.filter(role=role)
+            return CustomUser.objects.filter(role=role).order_by('-created_at')
         return CustomUser.objects.none()
 
     def post(self, request, *args, **kwargs):
@@ -38,7 +38,7 @@ class UserRoleRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
         role = self.kwargs.get('role', None)
         print(f'UserRoleRetrieveUpdateDestroyAPIView.get_queryset role={role}')
         if role:
-            return CustomUser.objects.filter(role=role)
+            return CustomUser.objects.filter(role=role).order_by('-created_at')
         return CustomUser.objects.none()
 
 

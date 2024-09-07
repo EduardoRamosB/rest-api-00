@@ -15,11 +15,11 @@ class AnimalViewSet(viewsets.ModelViewSet):
         role = self.request.query_params.get('role')
 
         if role == 'admin' or role == 'volunteer':
-            return Animal.objects.all()
+            return Animal.objects.all().order_by('-created_at')
         elif role == 'adopter':
-            return Animal.objects.filter(status='available')
+            return Animal.objects.filter(status='available').order_by('-created_at')
         else:
-            return Animal.objects.none()  # No animals available for other roles
+            return Animal.objects.none()
 
     def perform_create(self, serializer):
         created_by_id = self.request.data.get('created_by_id')
@@ -55,14 +55,14 @@ class AdoptionViewSet(viewsets.ModelViewSet):
 
         if self.action in ['list', 'retrieve']:
             if role == 'admin' or role == 'volunteer':
-                return Adoption.objects.all()
+                return Adoption.objects.all().order_by('-created_at')
             elif role == 'adopter':
                 if not user_id:
                     raise ValidationError("User ID is required for role 'adopter'.")
-                return Adoption.objects.filter(adopter_id=user_id)
+                return Adoption.objects.filter(adopter_id=user_id).order_by('-created_at')
             else:
                 return Adoption.objects.none()
-        return Adoption.objects.all()
+        return Adoption.objects.all().order_by('-created_at')
 
 
     def perform_create(self, serializer):

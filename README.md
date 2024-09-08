@@ -50,7 +50,7 @@ Backend utilizando Django Rest Framework para la gestión de un albergue de anim
     DATABASE_HOST=localhost
     DATABASE_PORT=5432
 
-    Asegúrate de reemplazar tu_secret_key y tu_password con valores apropiados.
+    Asegúrate de reemplazar poner_aqui_tu_secret_key y poner_aqui_tu_password con valores apropiados.
 
 6. **Aplica las migraciones:**
     ```bash
